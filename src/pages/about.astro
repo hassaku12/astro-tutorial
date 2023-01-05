@@ -1,4 +1,18 @@
 ---
+const pageTitle = "About Me";
+
+const identity = {
+    name: "八朔",
+    country: "日本",
+    occupation: "金融職員",
+    likes: ["コスメ", "投資"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "Python", "UI Design"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -7,18 +21,27 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>My Astro Site</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>About Me</h1>
-        <h2>... and my new Astro Site!</h2>
-
-        <p>I am working trough Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself</p>
-
-        <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+		<h1>{pageTitle}</h1>
+        <ul>
+            <li>私は {identity.name} です。</li>
+            <li>出身は {identity.country} で、仕事は {identity.occupation}。</li>
+            {identity.likes.length >= 2 &&
+                <li>好きなことは {identity.likes[0]}と{identity.likes[1]}です。</li>
+            }
+        </ul>
+        <p>My skills</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        {happy && <p>Astroの学習は楽しいです！</p>}
+        {finished && <p>チュートリアルが終わりました！</p>}
+        {goal === 3 ?  <p>３日でマスターしました。</p> : <p>３日でマスターできなかったです。</p>}
 	</body>
 </html>
