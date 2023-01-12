@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My First Blog Post'
 pubDate: 2023-01-05
 description: 'Astroブログに新しいポストをしました'
@@ -9,8 +10,6 @@ image:
 tags: ["astro", "blogging", "learning is publick"]
 ---
 # 最初の投稿です
-
-Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
